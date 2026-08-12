@@ -23,8 +23,10 @@ services:
     runtime: docker
     name: gbrain-edge
     plan: starter
-    dockerfilePath: ./infra/gbrain-edge/Dockerfile
-    dockerContext: ./infra/gbrain-edge
+    region: oregon
+    rootDir: infra/gbrain-edge
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
     autoDeployTrigger: off
     envVars:
       - key: GBRAIN_HOST
