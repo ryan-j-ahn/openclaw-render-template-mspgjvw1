@@ -1,0 +1,5 @@
+:{$PORT:10000} {
+    reverse_proxy http://{$GBRAIN_HOST}:3131 {
+        header_up X-Forwarded-Proto https
+    }
+}
