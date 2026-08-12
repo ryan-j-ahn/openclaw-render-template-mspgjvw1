@@ -2,8 +2,10 @@ services:
   - type: web
     runtime: docker
     name: AlphaClaw
-    plan: starter
+    plan: pro plus
     healthCheckPath: /health
+    maxShutdownDelaySeconds: 60
+    dockerCommand: /bin/bash /data/.gbrain/render-start.sh
     envVars:
       - key: SETUP_PASSWORD
         sync: false
