@@ -18,3 +18,17 @@ services:
       name: openclaw-data
       mountPath: /data
       sizeGB: 10
+
+  - type: web
+    runtime: docker
+    name: gbrain-edge
+    plan: starter
+    dockerfilePath: ./infra/gbrain-edge/Dockerfile
+    dockerContext: ./infra/gbrain-edge
+    autoDeployTrigger: off
+    envVars:
+      - key: GBRAIN_HOST
+        fromService:
+          type: web
+          name: AlphaClaw
+          property: host
