@@ -5,6 +5,7 @@ services:
     plan: pro plus
     healthCheckPath: /health
     dockerCommand: /bin/bash /data/.gbrain/render-start.sh
+    autoDeployTrigger: off
     envVars:
       - key: SETUP_PASSWORD
         sync: false
