@@ -4,7 +4,7 @@ services:
     name: AlphaClaw
     plan: pro plus
     healthCheckPath: /health
-    dockerCommand: /bin/bash /data/.gbrain/render-start.sh
+    dockerCommand: /app/runtime/render-start.sh
     autoDeployTrigger: off
     envVars:
       - key: SETUP_PASSWORD
